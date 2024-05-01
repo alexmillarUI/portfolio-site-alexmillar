@@ -7,7 +7,7 @@
     <title>Alex Millar - About Me</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -18,12 +18,12 @@
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 </head>
-<body id="about">
-    <header id="navigation">
-        <div>
-        <img src="img/logo.svg" alt="Alex Millar">
+<body>
+    <header>
+        <div class="container">
+        <img src="img/logo.svg" class="logo" alt="Alex Millar">
         <nav>
-            <ul>
+            <ul class="navigation">
               <li><a href="index.html">Work</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="#contact">Contact</a></li>
@@ -32,17 +32,18 @@
         </div>
     </header>
     <main>
-        <div>
-            <div>
+        <div class="container">
+            <div id="about">
                 <h1>About Me</h1>
             </div>
         </div>
-        <div>
-            <div>
+        <div class="container">
+            <div id="about"> 
                 <picture>
                     <source src="img/portrait.png" media="(max-width:767px)">
-                    <img src="img/portrait.png" alt="My Image">
+                    <img src="img/portrait.png" class="portrait" alt="My Image">
                 </picture>
+            </div>
                 <div>
                     <div>
                         <h2>My Story</h2>
@@ -58,7 +59,7 @@
                         </p>
                         <a href="files/cv.pdf" class="button" download>Download my CV</a>
                     </div>
-                    <div>
+                    <div class="row">
                         <h2>My Skills</h2>
                         <div>
                             <div>
@@ -83,14 +84,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-                
+        </div>       
     </main>
     <footer id="contact">
-        <div>
+        <div class="container">
             <h2>Get in Touch</h2>
             <p>
-                Do you like my work and want to discuss opportunities? Please get in touch. Call: <a href="tel:+447776673632">+44 7776673632</a>
+                Do you like my work and want to discuss opportunities? Please get in touch. <br> Call: <a href="tel:+447776673632">+44 7776673632</a>
             </p>
             <div>
                 <a href="mailto:alexmillar@outlook.com" class="button contact">Email me</a>
@@ -98,7 +98,7 @@
             <br>
             <div>
                 <a href="https://www.linkedin.com/in/alex-millar-05623057/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="2500" height="2500" viewBox="7.025 7.025 497.951 497.95"><linearGradient id="a" 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="7.025 7.025 497.951 497.95"><linearGradient id="a" 
                         gradientUnits="userSpaceOnUse" x1="-974.482" y1="1306.773" x2="-622.378" y2="1658.877" gradientTransform="translate(1054.43 -1226.825)">
                         <stop offset="0" stop-color="#2489be"/><stop offset="1" stop-color="#0575b3"/></linearGradient><path d="M256 7.025C118.494 7.025 7.025 118.494 
                         7.025 256S118.494 504.975 256 504.975 504.976 393.506 504.976 256C504.975 118.494 393.504 7.025 256 7.025zm-66.427 
@@ -107,7 +107,7 @@
                         14.782-33.312 39.619v92.704h-52.43V199.761h52.43v23.786s15.771-29.173 53.219-29.173c37.449 0 64.257 22.866 64.257 70.169l-.001 111.825z" fill="url(#a)"/></svg>
                 </a>
                 <a href="https://www.behance.net/alexjmillar" target="_blank">
-                    <svg id="Calque_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2500 2500" width="2500" height="2500"><style>
+                    <svg id="Calque_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2500 2500" width="50" height="50"><style>
                         .st0{fill:#1769ff}.st1{fill:#fff}</style><title>behance</title><circle class="st0" cx="1250" cy="1250" r="1250" 
                         id="background"/><path class="st1" d="M883.1 683.6c53.9 0 103.1 4.8 147.6 14.3s82.5 25.1 114.2 46.8c31.7 21.7 56.3 50.5 
                         73.8 86.5s26.2 80.4 26.2 133.3c0 57.1-13 104.7-38.9 142.8-25.9 38.1-64.3 69.3-115 93.6 69.8 20.1 121.9 55.3 156.3 105.5 
@@ -124,7 +124,7 @@
                         45.2-14.3 18-24.3 37-30.1 57.1-5.8 20.1-9.3 38.1-10.3 53.9h366.5c-10.7-57-29.5-100.4-56.4-130zm-348.7-426.4h457.9v127h-457.9v-127z" id="behance"/></svg>
                 </a>
                 <a href="https://github.com/alexmillarUI" target="_blank">
-                    <svg height="2500" viewBox="0 -3.1 2490.3 2493" width="2494" xmlns="http://www.w3.org/2000/svg"><ellipse cx="1245.2" cy="1243.4" fill="#fff" rx="1217.6" 
+                    <svg height="50" viewBox="0 -3.1 2490.3 2493" width="50" xmlns="http://www.w3.org/2000/svg"><ellipse cx="1245.2" cy="1243.4" fill="#fff" rx="1217.6" 
                         ry="1246.5"/><path d="m1245.2 1.6c-687.6 0-1245.2 557.4-1245.2 1245.1 0 550.2 356.8 1016.9 851.5 1181.5 
                         62.2 11.5 85.1-27 85.1-59.9 0-29.7-1.2-127.8-1.7-231.8-346.4 75.3-419.5-146.9-419.5-146.9-56.6-143.9-138.3-182.2-138.3-182.2-113-77.3 8.5-75.7 8.5-75.7 
                         125 8.8 190.9 128.3 190.9 128.3 111.1 190.4 291.3 135.3 362.3 103.5 11.2-80.5 43.4-135.4 79.1-166.5-276.6-31.5-567.3-138.3-567.3-615.4 0-135.9 48.6-247 
