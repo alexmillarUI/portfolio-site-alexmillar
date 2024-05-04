@@ -8,16 +8,16 @@
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    line-height: 1.6;
-    color: #4a4a4a;
+    line-height: 1.4;
+    color: #333333;
   }
   h1, h2, h3, h4 {
-    line-height: 1.4;
     letter-spacing: 0.02em
   }
   h1 {
-    font-size: 2em;
-    font-weight: 600;
+    font-size: 1.8em;
+    font-weight: 500;
+    line-height: 1.6;
   }
   h2 {
     font-size: 1.75em;
@@ -26,16 +26,23 @@
   h3 {
     font-size: 1.5em;
     font-weight: 600;
+    line-height: 0;
+  }
+  #aboutpage h2 h3 { 
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 0;
   }
   h4 {
     font-size: 1.25em;
     font-weight: 400;
+    line-height: 1;
   }
   header {
     background-color: #3C668C;
     padding: 10px 0;
     text-align: center;
-    box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.6);
     position: fixed;
     width: 100%;
   }
@@ -68,7 +75,7 @@
   }
   #hero {
     background-color: #2d4c69;
-    padding: 20px 0;
+    padding: 20px 20px;
     display: inline-block;
     width: 100%;
   }
@@ -80,7 +87,7 @@
     text-align: center;
     color: #ffffff;
     font-weight: 300;
-    font-size: 1.1em;
+    font-size: 1em;
   }
   .heading {
     font-weight: 400;
@@ -89,25 +96,48 @@
     padding-top: 20px;
     text-align: center;
   }
+  .background {
+    background:#2d4c691a
+  }
   .portrait {
     max-width: 250px;
+    border-radius: 300px;
+  }
+  .header {
+    padding: 0 20px;
+  }
+  .story{
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .container {
-    padding: 0 15px;
+    padding: 0 10px;
   }
-  #work .row { 
-    padding-bottom: 25px;
-    border-bottom: 1px solid #b9b9b9;
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .row { 
+    padding-bottom: 20px;
+    border-bottom: 1px solid #bbbbbb;
   }
   #work .container h2 {
     text-align: center;
+    line-height: 2;
+    font-weight: 600;
   }
-  .row { 
-    padding-bottom: 25px;
-    border-bottom: 1px solid #d4d4d4;
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
   }
   img {
     width: 100%;
+  }
+  .thumbnail {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   .casestudy {
     display: block;
@@ -166,7 +196,72 @@
   }
   footer {
     background-color: #ffffff;
+    color:#011E39;
     padding: 10px 0;
     width: 100%;
     text-align: center;
+    border-top: 2px solid #bbbbbb;
+  }
+  [class*="col-"] {
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  @media only screen and (min-width: 640px) {
+    header {
+      text-align: unset;
+      padding: 20px 0 13px;
+    }
+    nav {
+      width: auto;
+      float: right;
+      margin-top: 4px;
+    }
+    main {
+      padding-top: 99px;
+    }
+    body {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .col-md-6 {
+      width: 50%;
+    }
+    h3 {
+      font-size: 1.5em;
+      font-weight: 600;
+      line-height: 0;
+    }
+    h1 {
+      font-size: 1.9em;
+      font-weight: 500;
+    }
+    p {
+      font-size: 1em;
+      font-weight: 400;
+    }
+
+  }
+  @media only screen and (min-width: 1024px) {
+    .col-lg-7 {
+      width: 60%;
+    }
+    .col-lg-5 {
+      width: 40%;
+    }
+    h1 {
+      font-size: 2.2em;
+      font-weight: 500;
+    }
+    p {
+      font-size: 1.1em;
+      font-weight: 400;
+    }
+    #hero p {
+      font-size: 1.1em;
+    }
+  }
+  @media only screen and (min-width: 1440px) {
+  }
+  @media only screen and (min-width: 1920px) {
   }
