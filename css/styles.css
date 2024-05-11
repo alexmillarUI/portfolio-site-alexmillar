@@ -49,6 +49,41 @@
   .logo {
     max-width: 150px;
   }
+  .illustration{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  @keyframes color-change {
+    0% {fill: #8D91DB;}
+    50% {fill: #17b45e;}
+    100% {fill: #f76414;}
+  }  
+  @keyframes pen-move {
+    from {transform: translate(0,0px);}
+    to {transform: translate(0px,40px);}
+  }
+  @keyframes window-move {
+    from {transform: translate(0,0px);}
+    to {transform: translate(-15px,-15px);}
+  }
+  @keyframes scaleup-grow {
+    from {transform: scale(0.7);}
+  }
+  .square{
+    animation: 2s color-change infinite alternate linear;
+  }
+  .pen {
+    animation: 1s pen-move infinite alternate linear;
+  }
+  .scaleup{
+    animation: 1s scaleup-grow infinite alternate linear;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+  }
+  .window {
+    animation: 2s window-move infinite alternate linear;
+  }
   nav {
     display: block;
     width: 100%;
@@ -157,7 +192,7 @@
     text-transform: uppercase;
     padding: 10px 20px 10px 20px;
     border-radius: 3px;
-    transition: 0.2s opacity;
+    transition: 0.35s opacity;
     border-radius: 25px;
   }
   .button:hover {
@@ -178,6 +213,7 @@
     color: #3C668C;
     text-transform: uppercase;
     border: 2px solid #3C668C;
+    transition: 0.2s;
   }
   .button.contact:hover {
     background-color: #3C668C;
