@@ -7,9 +7,9 @@
   body {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 350;
     line-height: 1.4;
-    color: #333333;
+    color: #2e4153;
   }
   h1, h2, h3, h4 {
     letter-spacing: 0.02em
@@ -113,6 +113,9 @@
     padding: 20px 20px;
     display: inline-block;
     width: 100%;
+    background-image:url(/img/background.png); 
+    background-size: 100% 100%;
+    box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.6);
   }
   #hero h1 {
     text-align: center;
@@ -157,10 +160,13 @@
     padding-bottom: 20px;
     border-bottom: 1px solid #bbbbbb;
   }
-  #work .container h2 {
+  #work .container h2{
     text-align: center;
     line-height: 2;
-    font-weight: 600;
+    font-size: 2.2em;
+    font-weight: 400;
+    text-transform: uppercase; 
+    border-bottom: #011e396b 1px solid;
   }
   .row::after {
     content: "";
