@@ -2,7 +2,7 @@
     box-sizing: border-box;
   }
   main {
-    padding-top: 150px;
+    padding-top: 70px;
   }
   body {
     font-family: 'Poppins', sans-serif;
@@ -40,14 +40,13 @@
   }
   header {
     background-color: #3C668C;
-    padding: 10px 0;
-    text-align: center;
+    padding: 14px 0px 10px;
     box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.6);
     position: fixed;
     width: 100%;
   }
   .logo {
-    max-width: 250px;
+    max-width: 150px;
   }
   .illustration{
     width: 100%;
@@ -84,16 +83,10 @@
   .window {
     animation: 2s window-move infinite alternate linear;
   }
-  nav {
-    display: block;
-    width: 100%;
-  }
   nav > ul {
     list-style-type: none;
     padding: 0;
-  }
-  nav > ul > li {
-    display: inline-block;
+    margin: 0;
   }
   nav > ul > li > a {
     padding: 0 15px;
@@ -107,6 +100,29 @@
   }
   nav > ul > li > a:focus {
     color: #011E39;
+  }
+  .navtoggle li:not(:last-child) {
+    display: none;
+  }
+  .navtoggle, .navtoggle.responsive {
+    position: relative;
+  }
+  .navtoggle.responsive nav {
+    padding: 10px 0 0;
+  }
+  .navtoggle.responsive li  {
+    display: block;
+    padding: 10px 0;
+  }
+  .navtoggle.responsive li:last-child  {
+    padding: 0 0 5px;
+  }
+  .navtoggle li .icon {
+    position: absolute;
+    right: 0;
+    top: 9px;
+    font-size: 22px;
+    padding-right: 0;
   }
   #hero {
     background-color: #2d4c69;
@@ -163,10 +179,9 @@
   #work .container h2{
     text-align: center;
     line-height: 2;
-    font-size: 2.2em;
+    font-size: 2em;
     font-weight: 400;
     text-transform: uppercase; 
-    border-bottom: #011e396b 1px solid;
   }
   .row::after {
     content: "";
@@ -259,6 +274,17 @@
       float: right;
       margin-top: 4px;
     }
+    nav > ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 1em 0;
+    }
+    .navtoggle li:not(:last-child) {
+      display: inline-block;
+    }
+    .navtoggle li:last-child {
+      display: none;
+    }
     main {
       padding-top: 99px;
     }
@@ -282,8 +308,13 @@
       font-size: 1em;
       font-weight: 400;
     }
-
-  }
+    .logo {
+      max-width: 250px;
+    }
+    nav > ul > li {
+      display: inline-block;
+    }
+  }  
   @media only screen and (min-width: 1024px) {
     .col-lg-7 {
       width: 60%;
@@ -305,5 +336,5 @@
   }
   @media only screen and (min-width: 1440px) {
   }
-  @media only screen and (min-width: 1920px) {
+  @media only screen and (min-width: 1920px) {  
   }

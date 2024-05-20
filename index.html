@@ -12,18 +12,22 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
+    <script src="https://kit.fontawesome.com/6eb0f95d79.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <div class="header">
+            <div class="navtoggle" id="myNavtoggle">
             <a href="index.html"><img src="img/logo.svg" class="logo" alt="Alex Millar"></a>
         <nav>
             <ul class="navigation">
               <li><a href="index.html">Work</a></li>
               <li><a href="about.html">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a onclick="menuToggle()" href="#contact">Contact</a></li>
+              <li><a href="javascript:void(0);" class="icon" onclick="menuToggle()"><i class="fas fa-bars"></i></a></li>
             </ul>
         </nav>
+            </div>
         </div>
     </header>
     <main class="background">
@@ -122,6 +126,10 @@
             </p>
         </div>
     </footer>
-<script src="js/scripts.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
