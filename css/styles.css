@@ -40,7 +40,8 @@
     line-height: 1;
   }
   header {
-    background-color: #3C668C;
+    background-image: url(/img/background2.png);
+    background-color: #5B8495;
     padding: 14px 0px 10px;
     box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.6);
     position: fixed;
@@ -104,20 +105,25 @@
   }
   .navtoggle li:not(:last-child) {
     display: none;
+    transition: all .3s ease;
   }
   .navtoggle, .navtoggle.responsive {
     position: relative;
+    transition: all .3s ease;
   }
   .navtoggle.responsive nav {
     padding: 10px 0 0;
+    transition: all .3s ease;
   }
   .navtoggle.responsive li  {
     display: block;
     padding: 10px 0;
-    border-top: 1px solid #2d4c69;
+    border-top: 1px solid #e9e9e93f;
+    transition: all .3s ease;
   }
   .navtoggle.responsive li:last-child  {
     padding: 0 0 5px;
+    transition: all .3s ease;
   }
   .navtoggle li .icon {
     position: absolute;
@@ -125,15 +131,25 @@
     top: 9px;
     font-size: 22px;
     padding-right: 0;
+    color: #ffffff;
+    transition: all .3s ease;
   }
-  #hero {
+  .rotate {
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+  }
+  .rotate.down{
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    transform:rotate(180deg);
+  }
+   #hero {
+    background-image: url(/img/background.png);
     background-color: #2d4c69;
     padding: 20px 20px;
     display: inline-block;
     width: 100%;
-    background-image:url(/img/background.png); 
-    background-size: 100% 100%;
-    box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.6);
   }
   #hero h1 {
     text-align: center;
@@ -148,15 +164,22 @@
   .heading {
     font-weight: 400;
   }
-  #about {
-    padding-top: 20px;
+  .title {
     text-align: center;
+    padding-top: 20px;
+    max-width: 300px;
+    text-align: center;
+  }
+  .aboutpic {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 0px;
   }
   .background {
     background:#2d4c691a
   }
   .portrait {
-    max-width: 250px;
+    max-width: 300px;
     border-radius: 300px;
   }
   .header {
@@ -278,6 +301,17 @@
       padding: 0;
       margin: 1em 0;
     }
+    .navtoggle.responsive nav {
+      padding: 0px 0 0;
+    }
+    .navtoggle.responsive li  {
+      display: block;
+      padding: 0px 0;
+      border-top: none;
+    }
+    .navtoggle.responsive li:last-child  {
+      padding: 0 0 5px;
+    }
     .navtoggle li:not(:last-child) {
       display: inline-block;
     }
@@ -286,6 +320,16 @@
     }
     main {
       padding-top: 99px;
+    }
+    .title {
+      text-align: center;
+      padding-top: 30px;
+      max-width: 400px;
+      text-align: center;
+    }
+    .portrait {
+      max-width: 400px;
+      border-radius: 300px;
     }
     body {
       font-size: 18px;

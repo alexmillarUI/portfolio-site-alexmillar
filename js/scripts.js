@@ -7,3 +7,6 @@ function menuToggle() {
       x.className = 'navtoggle';
     }
   }
+  $(".rotate").click(function(){
+    $(this).toggleClass("down"); 
+});
