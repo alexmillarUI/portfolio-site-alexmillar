@@ -167,7 +167,7 @@
   .title {
     text-align: center;
     padding-top: 20px;
-    max-width: 300px;
+    max-width: 250px;
     text-align: center;
   }
   .aboutpic {
@@ -324,7 +324,7 @@
     .title {
       text-align: center;
       padding-top: 30px;
-      max-width: 400px;
+      max-width: 300px;
       text-align: center;
     }
     .portrait {
@@ -364,6 +364,12 @@
     }
     .col-lg-5 {
       width: 40%;
+    }
+    .title {
+      text-align: center;
+      padding-top: 30px;
+      max-width: 400px;
+      text-align: center;
     }
     h1 {
       font-size: 2.2em;
