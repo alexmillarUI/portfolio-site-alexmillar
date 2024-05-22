@@ -44,6 +44,7 @@
     padding: 14px 0px 10px;
     box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.6);
     position: fixed;
+    z-index: 1;
     width: 100%;
   }
   .logo {
@@ -197,7 +198,6 @@
   }
   .row { 
     padding-bottom: 20px;
-    border-bottom: 1px solid #bbbbbb;
   }
   #work .container h2 {
     text-align: center;
