@@ -225,6 +225,9 @@
   a:hover {
     color: #011E39;
   }
+  footer a:hover {
+    text-decoration: underline;
+  }
   .button {
     display: inline-block;
     background-color: #3C668C;
