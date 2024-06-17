@@ -40,7 +40,7 @@
     line-height: 1;
   }
   header {
-    background-image: url(../img/background2.png);
+    background-color: #011E39;
     padding: 14px 0px 10px;
     box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.6);
     position: fixed;
@@ -98,10 +98,10 @@
     font-size: 1.2em;
   }
   nav > ul > li > a:hover {
-    color: #011E39;
+    color: #ECC889;
   }
   nav > ul > li > a:focus {
-    color: #011E39;
+    color: #ECC889;
   }
   .navtoggle li:not(:last-child) {
     display: none;
@@ -145,23 +145,8 @@
     transform:rotate(180deg);
   }
    #hero {
-    background-image: url(../img/background.png);
-    padding: 20px 20px;
-    display: inline-block;
+    background-color: #ffffff;
     width: 100%;
-  }
-  #hero h1 {
-    text-align: center;
-    color: #ffffff;
-  }
-  #hero p {
-    text-align: center;
-    color: #ffffff;
-    font-weight: 300;
-    font-size: 1em;
-  }
-  .heading {
-    font-weight: 400;
   }
   .title {
     text-align: center;
@@ -175,7 +160,7 @@
     padding-bottom: 0px;
   }
   .background {
-    background:#0a32571a
+    background:#ffffff;
   }
   .portrait {
     max-width: 300px;
@@ -222,14 +207,14 @@
     text-decoration: none;
   }
   a:hover {
-    color: #011E39;
+    color: #ECC889;
   }
   footer a:hover {
     text-decoration: underline;
   }
   .button {
     display: inline-block;
-    background-color: #3C668C;
+    background-color: #011E39;
     color: #ffffff;
     font-weight: 500;
     text-transform: uppercase;
@@ -253,20 +238,20 @@
   }
   .button.contact {
     background-color: transparent;
-    color: #3C668C;
+    color: #011E39;
     text-transform: uppercase;
-    border: 2px solid #3C668C;
+    border: 2px solid #011E39;
     transition: 0.2s;
   }
   .button.contact:hover {
-    background-color: #3C668C;
+    background-color: #011E39;
     color: #ffffff;
-    border: 2px solid #3C668C;
+    border: 2px solid #011E39;
   }
   .button.contact:focus {
-    background-color: #3C668C;
+    background-color: #011E39;
     color: #ffffff;
-    border: 2px solid #3C668C;
+    border: 2px solid #011E39;
   }
   .button.contact:active {
     background-color: #011E39;

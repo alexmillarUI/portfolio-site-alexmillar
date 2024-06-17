@@ -40,19 +40,21 @@
     <main class="background">
         <div id="hero">
             <div>
-                <h1>Hi, I'm Alex Millar.<br><span>I'm a UI/UX Designer from Bristol.</span></h1>
-                <p>
-                    I recently graduated from the CareerFoundry UI Design Program and I've been designing for 1 year.
-                </p>
+                <picture>
+                    <source media="(min-width: 1024px)" srcset="img/hero.svg">
+                    <source media="(min-width: 640px)" srcset="img/hero2.svg">
+                    <img src="img/hero3.svg">
+                </picture>
             </div>
         </div>
         <div id="work">
             <div class="container">
                 <div class="aboutpic">
-                <picture>
-                    <img src="img/mywork.svg" class="title" alt="My Work">
-                </picture>
+                    <a class="button" href="#workscroll">My Work</a>
                 <br>
+                <div id="workscroll">
+                    <br>
+                </div>
                 <br>
                 </div>
                 <div class="row" data-aos="fade-up">
