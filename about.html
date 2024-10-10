@@ -17,6 +17,13 @@
     <link rel="mask-icon" href="favicon.ico/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        .bubble {
+            cursor: pointer;
+            opacity: 0.9;
+        }
+    </style>
     <script src="https://kit.fontawesome.com/6eb0f95d79.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -42,7 +49,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-7">
                     <h1>I'm Alex Millar.</h1>
-                    <h4>I'm a UI/UX Designer from Bristol and I've been working for 1 year.</h4>
+                    <h4>I'm a UI/UX Designer based in Sydney, and I've been working for 1 year.</h4>
                     <br>
                     <a href="files/alex-millar-CV.pdf" class="button" target="_blank">View my CV</a>
                 </div>
@@ -69,14 +76,125 @@
                             designs with UX solutions that always keep the customer’s needs at the forefront.
                             <br>
                         </p>
+                        <h2>Key Skills</h2>
                     </div>
                     <div>
-                        <h2>Key Skills</h2>
                         <div>
-                            <picture>
-                                <source media="(min-width: 640px)" srcset="img/chart.svg">
-                                <img src="img/chartmobile.svg">
-                            </picture>
+                            <div style="width: 100%; height: 100%;">
+                                <svg id="chart" width="100%" height="100%" viewBox="0 0 1000 700"></svg>
+                            </div>
+                            <script>
+                                const margin = { top: 0, right: 0, bottom: 0, left: 0 };
+                                const height = 700;
+                                const skills = [
+                                    { name: "Prototyping", value: 40, color: "#5F9BAB" },
+                                    { name: "Figma", value: 70, color: "#011E39" },
+                                    { name: "Communication", value: 70, color: "#ECC889" },
+                                    { name: "Empathy", value: 70, color: "#ECC889" },
+                                    { name: "Visual Design", value: 50, color: "#5F9BAB" },
+                                    { name: "User Flows", value: 30, color: "#5F9BAB" },
+                                    { name: "Copywriting", value: 35, color: "#5F9BAB" },
+                                    { name: "CSS", value: 15, color: "#011E39" },
+                                    { name: "Problem Solving", value: 70, color: "#ECC889" },
+                                    { name: "Collaboration", value: 70, color: "#ECC889" },
+                                    { name: "Wireframing", value: 40, color: "#5F9BAB" },
+                                    { name: "Organisation", value: 70, color: "#ECC889" },
+                                    { name: "Detail Oriented", value: 70, color: "#ECC889" },
+                                    { name: "Java", value: 10, color: "#011E39" },
+                                    { name: "User-Testing", value: 40, color: "#5F9BAB" },
+                                    { name: "HTML", value: 15, color: "#011E39" },
+                                ];
+                        
+                                const svg = d3.select("#chart");
+                                const width = parseInt(svg.style("width")); 
+        
+                                const initialCenterX = (width < 700) ? width / 1 : width / 2;
+                        
+                                const radius = d3.scaleSqrt().range([0, 10]);
+                                const nodes = skills.map((d) => ({
+                                    radius: radius(d.value),
+                                    color: d.color,
+                                    name: d.name,
+                                    x: Math.random() * width,
+                                    y: Math.random() * height
+                                }));
+                        
+                                const force = d3.forceSimulation(nodes)
+                                    .force("charge", d3.forceManyBody().strength(-30))
+                                    .force("center", d3.forceCenter(initialCenterX, height / 2))
+                                    .force("collide", d3.forceCollide(d => d.radius + 4))
+                                    .on("tick", tick);
+                        
+                                const g = svg.append("g")
+                                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                        
+                                const circles = g.selectAll("circle")
+                                    .data(nodes)
+                                    .enter().append("circle")
+                                    .attr("class", "bubble")
+                                    .attr("r", d => d.radius)
+                                    .style("fill", d => d.color)
+                                    .call(d3.drag()
+                                        .on("start", dragstarted)
+                                        .on("drag", dragged)
+                                        .on("end", dragended));
+                        
+                                const text = g.selectAll("text")
+                                    .data(nodes)
+                                    .enter().append("text")
+                                    .attr("text-anchor", "middle")
+                                    .attr("dy", ".35em")
+                                    .text(d => d.name)
+                                    .style("fill", "white");
+                        
+                                function tick() {
+                                    circles.attr("cx", d => d.x)
+                                        .attr("cy", d => d.y);
+                                    text.attr("x", d => d.x)
+                                        .attr("y", d => d.y);
+                                }
+                        
+                                function dragstarted(event, d) {
+                                    if (!event.active) force.alphaTarget(0.3).restart();
+                                    d.fx = d.x;
+                                    d.fy = d.y;
+                                }
+                        
+                                function dragged(event, d) {
+                                    d.fx = event.x;
+                                    d.fy = event.y;
+                                }
+                        
+                                function dragended(event, d) {
+                                    if (!event.active) force.alphaTarget(0);
+                                    d.fx = null;
+                                    d.fy = null;
+                                }
+                        
+                                function applyGravity() {
+                                    nodes.forEach(d => {
+                                        d.y += (height / 2 - d.y) * 0.015;
+                                        d.x += (width / 2 - d.x) * 0.015;
+                                    });
+                                }
+                        
+                                force.on("tick", function() {
+                                    applyGravity();
+                                    tick();
+                                });
+                        
+                                function resize() {
+                                    const newWidth = parseInt(svg.style("width"));
+                        
+                                    const newCenterX = (newWidth < 700) ? newWidth / 1 : newWidth / 2;
+                                    force.force("center", d3.forceCenter(newCenterX, height / 2));
+                                    
+                                    force.alpha(1).restart(); 
+                                }
+                        
+                                window.addEventListener('resize', resize);
+                        
+                            </script>
                         </div>
                     </div>
                 </div>
@@ -87,7 +205,7 @@
             <h2>Get in Touch</h2>
             <p>
                 If you like my designs and want to get in touch, please don't hesitate to contact me. <br> Call or WhatsApp me on: <a href="tel:+447776673632">+44 7776673632</a>
-                <br> Location: Bristol, UK
+                <br> Location: Sydney, NSW
             </p>
             <div>
                 <a href="mailto:alexmillar@outlook.com" class="button contact" target="_blank">Email me</a>
