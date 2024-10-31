@@ -49,6 +49,7 @@ nav > ul > li > a {
 .navtoggle.responsive li  {
   display: block;
   padding: 10px 0;
+  border-top: 1px solid #ffffff0c;
 }
 .navtoggle.responsive li:last-child  {
   padding: 0 0 5px;
