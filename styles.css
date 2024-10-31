@@ -1,0 +1,681 @@
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+header {
+  background-color: #011E39;
+  padding: 14px 0px 10px;
+  box-shadow: 0px 2px 20px 0px rgba(0,0,0,0.6);
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  margin: 0 auto;
+}
+.header {
+  padding: 0 20px;
+}
+.logo {
+  max-width: 140px;
+}
+nav > ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+nav > ul > li > a {
+  position: relative;
+  padding: 0 15px;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 1.2em;
+}
+.navtoggle li:not(:last-child) {
+  display: none;
+}
+.navtoggle, .navtoggle.responsive {
+  position: relative;
+}
+.navtoggle nav {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease;
+}
+.navtoggle.responsive nav {
+  padding: 10px 0 0;
+  max-height: 300px;
+  transition: max-height 0.2s ease-in-out;
+}
+.navtoggle.responsive li  {
+  display: block;
+  padding: 10px 0;
+}
+.navtoggle.responsive li:last-child  {
+  padding: 0 0 5px;
+}
+.navtoggle li .icon {
+  position: absolute;
+  right: 0;
+  top: 9px;
+  font-size: 22px;
+  padding-right: 0;
+  color: #ffffff;
+  transition: all .3s ease;
+}
+.rotate {
+  -moz-transition: all 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.rotate.down{
+  -moz-transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);
+  transform:rotate(180deg);
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  opacity: 0.7;
+}
+.mywork a:hover {
+  opacity: 1;
+}
+.button {
+  display: inline-block;
+  background-color: #011E39;
+  color: #ffffff;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px 20px 10px 20px;
+  border-radius: 3px;
+  transition: 0.35s opacity;
+  border-radius: 25px;
+}
+
+
+.aboutbackground {
+  background:url(img/aboutbackground.png);
+  background-attachment: fixed;
+  background-size: cover;
+}
+.homebackground {
+  background:url(img/homebackground.png);
+  background-attachment: fixed;
+  background-size: cover;
+} 
+.projectsbackground {
+  background:url(img/projectsbackground.png);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #011E39;
+}
+h1, h2 {
+  letter-spacing: 0.02em
+}
+.row p {
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+h1 {
+  font-size: 2.4em;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+}
+h2 {
+  font-size: 1.95em;
+  font-weight: 700;
+  text-align: left;
+}
+.row h1 {
+  font-size: 3.2em;
+  line-height: 0.5;
+}
+.row h2 {
+  text-align: center;
+}
+#work .container h2 {
+  text-align: center;
+  line-height: 2;
+}
+footer h2 {
+  text-align: center;
+}
+footer {
+  background-color: #011E39;;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+
+
+.icons {
+  letter-spacing: 0.8em;
+}
+.container {
+  padding: 0 10px;
+}
+.container {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+main {
+  padding-top: 70px;
+}
+img {
+  width: 100%;
+}
+.title {
+  padding-top: 240px;
+  text-align: center;
+}
+.orangeword {
+  color:#FF8D19 ;
+}
+.centralbutton {
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+
+.imageBox {
+  position: relative;
+  border-radius: 20px;
+}
+.imageBox .hoverImg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.imageBox:hover .hoverImg {
+  display: block;
+}
+.thumbnail1 {
+  border-radius: 25px;
+}
+.thumbnail2 {
+  border-radius: 25px;
+  box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.75);
+}
+.mywork {
+  padding: 20px 5px 20px 5px;
+}
+.casestudy {
+  display: block;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 4px 0px 24px 4px rgba(92, 92, 92, 0.45);
+}
+.freska {
+  padding-top: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 4px 0px 24px 4px rgba(92, 92, 92, 0.45);
+}
+.illustration{
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+@keyframes color-change {
+  0% {fill: #8D91DB;}
+  50% {fill: #17b45e;}
+  100% {fill: #f76414;}
+}  
+@keyframes pen-move {
+  from {transform: translate(0,0px);}
+  to {transform: translate(0px,40px);}
+}
+@keyframes window-move {
+  from {transform: translate(0,0px);}
+  to {transform: translate(-15px,-15px);}
+}
+@keyframes scaleup-grow {
+  from {transform: scale(0.7);}
+}
+.square{
+  animation: 2s color-change infinite alternate linear;
+}
+.pen {
+  animation: 1s pen-move infinite alternate linear;
+}
+.scaleup{
+  animation: 1s scaleup-grow infinite alternate linear;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+.window {
+  animation: 2s window-move infinite alternate linear;
+}
+
+
+.row { 
+  padding-bottom: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  display: block;
+}
+.col-md-6.col-lg-7{
+  width: 100%;
+  padding-top: 30%;
+}
+.col-md-6.col-lg-5 {
+  width: 100%;
+  padding-top: 20%;
+  text-align: center;
+}
+[class*="col-"] {
+  float: left;
+  padding-left: 10px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.skillicons {
+  letter-spacing: 0.2em;
+  padding-top: 10%;
+  float: none;
+  text-align: center;
+}
+.skillicons svg {
+  width: 100px;
+}
+.homeicons {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  letter-spacing: 0.8em;
+}  
+.portrait {
+  width: 100%;
+  float: none;
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 10%;
+  padding-top: 20%;
+}
+.story {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.skills {
+  padding-top: 60px;
+}
+.skills-section {
+  display: flex;
+  justify-content: center;
+}
+.chart-container {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  margin-left: 40px;
+  margin-top: 60px;
+}
+.chart, .bgchart {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+.chart {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  top: 50%;
+  left: 50%;
+  margin: -200px 0 0 -200px;
+}
+.bgchart {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  top: 50%;
+  left: 50%;
+  margin: -215px 0 0 -215px;
+}
+.doughnutTip {
+    display:none;
+    opacity: 0;
+    visibility: hidden;
+}
+.chart .doughnutSummary {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #253236;
+  text-align: center;
+  cursor: default;
+  font-family: Poppins;
+  font-weight: 600;
+  width: auto;
+  height: auto;
+}
+.chart .doughnutSummaryTitle {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  margin-top: -30%;
+  font-size: 14px;
+  font-family: Poppins;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.chart .doughnutSummary,
+.bgchart .doughnutSummary{
+  display: none;
+}
+.chart>svg>path {
+  background-color: transparent;
+}
+.chart path:hover { opacity: 0.65; }
+.bgchart path { display: none }
+
+
+@media only screen and (min-width: 640px) {
+  .mywork {
+    padding: 60px 70px 60px 70px;
+  }
+  .title {
+    text-align: center;
+    padding-top: 300px;
+  }
+  .col-md-6.col-lg-7{
+    width: 100%;
+    padding-top: 10%;
+  }
+  .col-md-6.col-lg-5 {
+    width: 100%;
+    padding-top: 10%;
+    text-align: center;
+  }
+  .skillicons {
+    letter-spacing: 2em;
+    padding-top: 2%;
+    float: none;
+    text-align: center;
+  }
+  .skillicons svg {
+    width: auto;
+  }
+  .homeicons {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    letter-spacing: 0.8em;
+  }  
+  .portrait {
+    width: 100%;
+    float: none;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-bottom: 10%;
+    padding-top: 10%;
+  }
+  h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 0;
+  }
+  .row h1 {
+    font-size: 4em;
+    font-weight: 700;
+    line-height: 0.2em;
+    text-align: center;
+  }
+  .row h2 {
+    font-size: 2.2em;
+    text-align: center;
+  }
+  h4 {
+    font-size: 1.3em;
+    font-weight: 500;
+  }
+  .row p {
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  .chart-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  .chart {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    margin: -200px 0 0 -200px;
+  }
+  
+  .bgchart {
+    position: absolute;
+    width: 430px;
+    height: 430px;
+    top: 50%;
+    left: 50%;
+    margin: -215px 0 0 -215px;
+  }
+}  
+
+@media only screen and (min-width: 1024px) {
+  header {
+    text-align: unset;
+    padding: 20px 0 13px;
+  }
+  nav {
+    width: auto;
+    float: right;
+    margin-top: 4px;
+  }
+  nav > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1em 0;
+  }
+  .navtoggle nav {
+    max-height: none;
+    padding: 0;
+  }
+  .navtoggle.responsive nav {
+    padding: 0px 0 0;
+  }
+  .navtoggle.responsive li  {
+    display: block;
+    padding: 0px 0;
+    border-top: none;
+  }
+  .navtoggle.responsive li:last-child  {
+    padding: 0 0 5px;
+  }
+  .navtoggle li:not(:last-child) {
+    display: inline-block;
+  }
+  .navtoggle li:last-child {
+    display: none;
+  }
+  nav > ul > li {
+    display: inline-block;
+  }
+  nav > ul > li > a {
+    position: relative;
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #ffffff;
+    font-size: 1.2em;
+    display: inline-block; 
+  }
+  
+  nav > ul > li > a:after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 15px; 
+    right: 15px; 
+    bottom: 0;
+    width: 0;
+    background: #ffffff;
+    transition: width 0.2s;
+  }
+  
+  nav > ul > li > a:hover:after {
+    width: calc(100% - 30px);
+  }
+  
+  nav > ul > li > a:focus:after {
+    width: calc(100% - 30px);
+  }
+  .logo {
+    max-width: 220px;
+  }
+  .col-md-6.col-lg-5 {
+    width: 40%;
+    padding-right: 6%;
+    padding-top: 12%;
+    padding-bottom: 5%;
+  }
+  .col-md-6.col-lg-7{
+    width: 50%;
+    padding-left: 6%;
+    padding-top: 12%;
+    padding-bottom: 5%;
+  }
+  .skillicons {
+    letter-spacing: 0.6em;
+    padding-top: 8%;
+    float: left;
+    text-align: left;
+  }
+  .homeicons {
+    padding-top: 40%;
+    letter-spacing: 0.8em;
+    float: right;
+  }
+  .portrait {
+    width: 80%;
+    float: right;
+    padding: 0;
+  }
+  .freska {
+    padding-top: 50px;
+  }
+  #work {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mywork {
+    padding: 60px 150px 60px 150px;
+  }
+  .title {
+    text-align: center;
+    padding-top: 300px;
+  }
+  .thumbnail1 {
+    border-radius: 30px;
+  }
+  .thumbnail2 {
+  border-radius: 30px;
+  box-shadow: 8px 8px 24px 4px rgba(59, 59, 59, 0.75);
+  }
+  .row h1 {
+    font-size: 3.2em;
+    font-weight: 700;
+    line-height: 0.2em;
+    text-align: left;
+  }
+  .row h2 {
+    font-size: 2em;
+    font-weight: 700;
+    line-height: 1.6em;
+    text-align: left;
+  }
+  h2 {
+    font-size: 2.5em;
+    text-align: left;
+  }
+  h4 {
+    font-size: 1.4em;
+    font-weight: 500;
+  }
+  .row p {
+    font-size: 0.9em;
+    font-weight: 400;
+    text-align: left;
+    padding: 0;
+  }
+  }
+@media only screen and (min-width: 1440px) {
+  .col-md-6.col-lg-5 {
+    width: 45%;
+    padding-right: 10%;
+    padding-top: 10%;
+    padding-bottom: 5%;
+  }
+  .col-md-6.col-lg-7{
+    width: 50%;
+    padding-left: 10%;
+    padding-top: 10%;
+    padding-bottom: 5%;
+  }
+  .skillicons {
+    letter-spacing: 2em;
+    padding-top: 10%;
+    width: 80%;
+  }
+  .homeicons {
+    padding-top: 30%;
+  }
+  .portrait {
+    width: 80%;
+    float: right;
+  }
+  h1 {
+    font-size: 4em;
+    font-weight: 700;
+    line-height: 0.5em;
+  }
+  h2 {
+    font-size: 2.5em;
+  }
+  h4 {
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+  .row p {
+    font-size: 1.1em;
+    font-weight: 400;
+    text-align: left;
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 1920px) {  
+}

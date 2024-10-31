@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico/favicon-16x16.png">
@@ -17,77 +17,39 @@
     <link rel="mask-icon" href="favicon.ico/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <style>
-        .bubble {
-            cursor: pointer;
-            opacity: 0.9;
-        }
-        body, html {
-          margin: 0;
-          padding: 0;
-          height: 100%;
-        }
-      
-        #chart {
-          display: block;
-          margin: 0;
-          padding: 0;
-          width: 100%;
-          height: 100%;
-          overflow: visible;
-        }
-      
-        div {
-          height: 100%;
-          margin: 0;
-          padding: 0;
-        }
-        footer {
-            position: relative;
-            z-index: 1;
-        }
-      </style>
     <script src="https://kit.fontawesome.com/6eb0f95d79.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script data-require="jquery@*" data-semver="2.1.3" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="js/jquery.drawDoughnutChart.js"></script>
+    <script src="js/script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="header">
             <div class="navtoggle" id="myNavtoggle">
-            <a href="index.html"><img src="img/logo.svg" class="logo" alt="Alex Millar"></a>
-        <nav>
-            <ul class="navigation">
-              <li><a href="index.html">Projects</a></li>
+            <a href="home.html"><img src="img/logo.svg" class="logo" alt="Alex Millar"></a>
+            <nav>
+             <ul class="navigation">
+              <li><a href="home.html">Home</a></li>
+              <li><a href="projects.html">Projects</a></li>
               <li><a href="about.html">About</a></li>
               <li><a onclick="menuToggle()" href="#contact">Contact</a></li>
               <li><a href="javascript:void(0);" class="icon" onclick="menuToggle()"><i class="fas fa-bars rotate"></i></a></li>
-            </ul>
-        </nav>
+             </ul>
+            </nav>
             </div>
         </div>
     </header>
-    <main class="background" id="aboutpage">
-        <div>
-            <div class="row">
-                <div class="col-md-6 col-lg-7">
-                    <h1>I'm Alex Millar.</h1>
-                    <h4>I'm a UI/UX Designer based in Sydney, and I've been working for 1 year.</h4>
-                    <br>
-                    <a href="files/alex-millar-CV.pdf" class="button" target="_blank">View my CV</a>
-                </div>
-                <div class="col-md-6 col-lg-5">
-                    <picture>
-                        <source media="(min-width: 1024px)" srcset="img/portrait1.svg">
-                        <source media="(min-width: 640px)" srcset="img/portrait2.svg">
-                        <img src="img/portrait.svg">
-                    </picture>
-                </div>
-            </div>
-                <div class="container">
-                    <div class="story">
-                        <h2>My Story</h2>
+    <main class="aboutbackground" id="aboutpage">
+        <div  class="container">
+            <div class="title" data-aos="fade-in" data-aos-duration="1000"><h1>About <span class="orangeword">me.</span></h1></div>
+            <div class="centralbutton" data-aos="fade-in" data-aos-duration="1000"><a href="files/alex-millar-CV.pdf" class="button" target="_blank">View my CV</a></div>
+                <div>
+                    <div class="story"  data-aos="fade-up" data-aos-duration="1000">
+                        <h2>My <span class="orangeword">story.</span></h2>
                         <p>Hey, I’m Alex - I’m a UI Designer from Bristol with a passion for visual design and problem solving and 
                             I’ve always been eager to discover and gain new skills. After graduating University with a degree in Geology, 
                             I travelled the world as much as possible and applied myself in various roles ranging from hospitality to teaching in Vietnam.
@@ -100,188 +62,76 @@
                             designs with UX solutions that always keep the customer’s needs at the forefront.
                             <br>
                         </p>
-                        <h2>Key Skills</h2>
-                    </div>
-                    <div>
-                        <div  style="width: 100%; height: 100%;">
-                            <svg id="chart" width="100%" height="100%" viewBox="0 0 1000 700"></svg>
-                            <script>
-                                const margin = { top: 0, right: 0, bottom: 0, left: 0 };
-                                const height = 700;
-                                const skills = [
-                                    { name: "Prototyping", value: 40, color: "#5F9BAB" },
-                                    { name: "Figma", value: 70, color: "#011E39" },
-                                    { name: "Communication", value: 70, color: "#ECC889" },
-                                    { name: "Empathy", value: 70, color: "#ECC889" },
-                                    { name: "Visual Design", value: 60, color: "#5F9BAB" },
-                                    { name: "User Flows", value: 30, color: "#5F9BAB" },
-                                    { name: "Copywriting", value: 35, color: "#5F9BAB" },
-                                    { name: "CSS", value: 15, color: "#011E39" },
-                                    { name: "Problem Solving", value: 70, color: "#ECC889" },
-                                    { name: "Collaboration", value: 70, color: "#ECC889" },
-                                    { name: "Wireframing", value: 40, color: "#5F9BAB" },
-                                    { name: "Organisation", value: 70, color: "#ECC889" },
-                                    { name: "Detail Oriented", value: 70, color: "#ECC889" },
-                                    { name: "Java", value: 10, color: "#011E39" },
-                                    { name: "User-Testing", value: 40, color: "#5F9BAB" },
-                                    { name: "HTML", value: 15, color: "#011E39" },
-                                ];
-                        
-                                const svg = d3.select("#chart");
-                                const width = parseInt(svg.style("width")); 
-        
-                                const initialCenterX = (width < 700) ? width / 1 : width / 2;
-                        
-                                const radius = d3.scaleSqrt().range([0, 10]);
-                                const nodes = skills.map((d) => ({
-                                    radius: radius(d.value),
-                                    color: d.color,
-                                    name: d.name,
-                                    x: Math.random() * width,
-                                    y: Math.random() * height
-                                }));
-                        
-                                const force = d3.forceSimulation(nodes)
-                                    .force("charge", d3.forceManyBody().strength(-30))
-                                    .force("center", d3.forceCenter(initialCenterX, height / 2))
-                                    .force("collide", d3.forceCollide(d => d.radius + 4))
-                                    .on("tick", tick);
-                        
-                                const g = svg.append("g")
-                                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-                        
-                                const circles = g.selectAll("circle")
-                                    .data(nodes)
-                                    .enter().append("circle")
-                                    .attr("class", "bubble")
-                                    .attr("r", d => d.radius)
-                                    .style("fill", d => d.color)
-                                    .call(d3.drag()
-                                        .on("start", dragstarted)
-                                        .on("drag", dragged)
-                                        .on("end", dragended));
-                        
-                                const text = g.selectAll("text")
-                                    .data(nodes)
-                                    .enter().append("text")
-                                    .attr("text-anchor", "middle")
-                                    .attr("dy", ".35em")
-                                    .text(d => d.name)
-                                    .style("fill", d => d.color === "#ECC889" ? "black" : "white");
-                        
-                                function tick() {
-                                    circles.attr("cx", d => d.x)
-                                        .attr("cy", d => d.y);
-                                    text.attr("x", d => d.x)
-                                        .attr("y", d => d.y);
-                                }
-                        
-                                function dragstarted(event, d) {
-                                    if (!event.active) force.alphaTarget(0.3).restart();
-                                    d.fx = d.x;
-                                    d.fy = d.y;
-                                }
-                        
-                                function dragged(event, d) {
-                                    d.fx = event.x;
-                                    d.fy = event.y;
-                                }
-                        
-                                function dragended(event, d) {
-                                    if (!event.active) force.alphaTarget(0);
-                                    d.fx = null;
-                                    d.fy = null;
-                                }
-                        
-                                function applyGravity() {
-                                    nodes.forEach(d => {
-                                        d.y += (height / 2 - d.y) * 0.015;
-                                        d.x += (width / 2 - d.x) * 0.01;
-                                    });
-                                }
-                        
-                                force.on("tick", function() {
-                                    applyGravity();
-                                    tick();
-                                });
-                        
-                                function resize() {
-                                    const newWidth = parseInt(svg.style("width"));
-                        
-                                    const newCenterX = (newWidth < 700) ? newWidth / 1 : newWidth / 2;
-                                    force.force("center", d3.forceCenter(newCenterX, height / 2));
-                                    
-                                    force.alpha(1).restart(); 
-                                }
-                        
-                                window.addEventListener('resize', resize);
-                        
-                            </script>
+                        <div  data-aos="fade-up" data-aos-duration="1000"> <h2 class="skills">Key <span class="orangeword">skills.</span></h2>
+                            <div class="skills-section">
+                                <div class="chart-container">
+                                    <div class="bgchart" id="doughnutBg"></div>
+                                    <div class="chart" id="doughnutChart"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>  
+        </div>  
     </main>
     <footer id="contact">
         <div class="container">
-            <h2>Get in Touch</h2>
+            <h2>Get in touch.</h2>
             <p>
-                If you like my designs and want to get in touch, please don't hesitate to contact me. <br> Call or WhatsApp me on: <a href="tel:+447776673632">+44 7776673632</a>
-                <br> Location: Sydney, NSW
+               Sydney, NSW
             </p>
-            <div>
-                <a href="mailto:alexmillar@outlook.com" class="button contact" target="_blank">Email me</a>
-            </div>
             <br>
-            <div>
+            <div class="icons">
+                <a href="mailto:alexmillar@outlook.com" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <g clip-path="url(#clip0_301_1427)">
+                          <path d="M19.9785 39.7354C30.8905 39.7354 39.7363 30.8895 39.7363 19.9775C39.7363 9.0656 30.8905 0.219727 19.9785 0.219727C9.06658 0.219727 0.220703 9.0656 0.220703 19.9775C0.220703 30.8895 9.06658 39.7354 19.9785 39.7354Z" fill="#EB7600"/>
+                          <path d="M29.2965 11H10.703C9.21014 11 8 12.2388 8 13.7669V26.233C8 27.7612 9.21014 29 10.703 29H29.297C30.7899 29 32 27.7612 32 26.233V13.7669C31.9995 12.2393 30.7894 11 29.2965 11ZM28.715 26.0653C28.5748 26.2141 28.3881 26.289 28.2014 26.289C28.0237 26.289 27.8455 26.2209 27.7072 26.0852L23.232 21.6763L22.5873 22.4005C21.925 23.1436 20.9823 23.5697 19.9998 23.5697C19.0172 23.5697 18.0741 23.1436 17.4122 22.4005L16.777 21.687L12.4904 26.0755C12.3517 26.218 12.1687 26.289 11.9863 26.289C11.8039 26.289 11.6214 26.218 11.4822 26.0755C11.2038 25.7905 11.2038 25.3289 11.4822 25.0439L15.8153 20.6077L11.2717 15.5033C11.0066 15.2056 11.0275 14.7441 11.3183 14.4727C11.6095 14.2013 12.0604 14.2227 12.3251 14.5203L18.4656 21.417C18.8637 21.8645 19.4087 22.1106 19.9998 22.1106C20.5908 22.1106 21.1363 21.8645 21.5339 21.417L22.6847 20.1248L27.6745 14.5208C27.9401 14.2232 28.3905 14.2022 28.6812 14.4732C28.972 14.7445 28.9929 15.2056 28.7278 15.5038L24.1923 20.598L28.695 25.0342C28.9787 25.3133 28.9877 25.7749 28.715 26.0653Z" fill="white"/>
+                        </g>
+                        <defs>
+                          <clippath id="clip0_301_1427">
+                            <rect width="40" height="40" fill="white"/>
+                          </clippath>
+                        </defs>
+                      </svg>
+                </a>
+                <a href="https://wa.me/+447776673632" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <g clip-path="url(#clip0_301_1431)">
+                          <path d="M19.9785 39.7354C30.8905 39.7354 39.7363 30.8895 39.7363 19.9775C39.7363 9.0656 30.8905 0.219727 19.9785 0.219727C9.06658 0.219727 0.220703 9.0656 0.220703 19.9775C0.220703 30.8895 9.06658 39.7354 19.9785 39.7354Z" fill="#4BAE4F"/>
+                          <path d="M10.1477 30.7345C9.91632 30.7345 9.69064 30.6428 9.52336 30.4737C9.30295 30.2507 9.21777 29.9271 9.30076 29.6241L10.5956 24.8954C9.78021 23.3596 9.35125 21.6358 9.35169 19.8875C9.35388 14.0058 14.1401 9.22046 20.0205 9.22046C22.8735 9.22134 25.554 10.3326 27.5675 12.3492C29.5815 14.3654 30.6897 17.0459 30.6888 19.8963C30.6866 25.7788 25.9008 30.5646 20.02 30.5646C18.356 30.5642 16.7091 30.173 15.2316 29.4305L10.3703 30.7055C10.297 30.7253 10.2219 30.7345 10.1477 30.7345ZM15.3379 27.6167C15.4836 27.6167 15.6285 27.6532 15.7585 27.7239C17.0586 28.433 18.5307 28.8079 20.017 28.8084C24.9331 28.8084 28.9308 24.8103 28.933 19.8954C28.9339 17.5139 28.0079 15.2747 26.3254 13.5904C24.6429 11.9058 22.4037 10.9776 20.0205 10.9767C15.1082 10.9767 11.1106 14.9744 11.1084 19.8888C11.1079 21.4541 11.5193 22.9952 12.2978 24.344C12.415 24.5473 12.4458 24.7887 12.3843 25.0149L11.3968 28.6209L15.1157 27.6453C15.1881 27.6264 15.2632 27.6167 15.3379 27.6167Z" fill="white"/>
+                          <path d="M16.1907 20.0855C16.0656 19.9186 15.1699 18.7296 15.1699 17.4989C15.1699 16.2682 15.8158 15.6632 16.045 15.413C16.2742 15.1627 16.5451 15.1003 16.7119 15.1003C16.8788 15.1003 17.0456 15.1021 17.1914 15.1091C17.345 15.117 17.551 15.0507 17.7538 15.5385C17.9624 16.0391 18.462 17.2702 18.5248 17.3953C18.5876 17.5205 18.6289 17.6662 18.5459 17.8335C18.4625 18.0004 18.4207 18.1044 18.296 18.2506C18.1709 18.3968 18.0335 18.5768 17.9206 18.6888C17.7955 18.8135 17.6651 18.9487 17.8109 19.199C17.9567 19.4493 18.4585 20.2681 19.2018 20.9315C20.1568 21.7838 20.9625 22.0476 21.2127 22.1728C21.4626 22.2979 21.6088 22.2773 21.7545 22.11C21.9003 21.9431 22.3798 21.3798 22.5466 21.1295C22.7135 20.8793 22.8799 20.921 23.1091 21.0044C23.3382 21.0878 24.5676 21.6929 24.8174 21.818C25.0673 21.9431 25.2341 22.0059 25.2969 22.11C25.3597 22.2145 25.3597 22.715 25.1511 23.299C24.9426 23.8829 23.9437 24.4164 23.4634 24.4879C23.0327 24.5525 22.4873 24.5793 21.8885 24.3887C21.5254 24.2737 21.0595 24.1196 20.4628 23.8618C17.954 22.7782 16.3163 20.2523 16.1907 20.0855Z" fill="white"/>
+                        </g>
+                        <defs>
+                          <clippath id="clip0_301_1431">
+                            <rect width="40" height="40" fill="white"/>
+                          </clippath>
+                        </defs>
+                      </svg>
+                </a>
                 <a href="https://www.linkedin.com/in/alexjmillar/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="7.025 7.025 497.951 497.95"><lineargradient id="a" 
-                        gradientUnits="userSpaceOnUse" x1="-974.482" y1="1306.773" x2="-622.378" y2="1658.877" gradientTransform="translate(1054.43 -1226.825)">
-                        <stop offset="0" stop-color="#2489be"/><stop offset="1" stop-color="#0575b3"/></lineargradient><path d="M256 7.025C118.494 7.025 7.025 118.494 
-                        7.025 256S118.494 504.975 256 504.975 504.976 393.506 504.976 256C504.975 118.494 393.504 7.025 256 7.025zm-66.427 
-                        369.343h-54.665V199.761h54.665v176.607zM161.98 176.633c-17.853 0-32.326-14.591-32.326-32.587 0-17.998 14.475-32.588 32.326-32.588s32.324 
-                        14.59 32.324 32.588c.001 17.997-14.472 32.587-32.324 32.587zm232.45 199.735h-54.4v-92.704c0-25.426-9.658-39.619-29.763-39.619-21.881 0-33.312 
-                        14.782-33.312 39.619v92.704h-52.43V199.761h52.43v23.786s15.771-29.173 53.219-29.173c37.449 0 64.257 22.866 64.257 70.169l-.001 111.825z" fill="url(#a)"/></svg>
-                </a>
-                <a href="https://www.behance.net/alexjmillar" target="_blank">
-                    <svg id="Calque_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2500 2500" width="50" height="50"><style>
-                        .st0{fill:#1769ff}.st1{fill:#fff}</style><title>behance</title><circle class="st0" cx="1250" cy="1250" r="1250" 
-                        id="background"/><path class="st1" d="M883.1 683.6c53.9 0 103.1 4.8 147.6 14.3s82.5 25.1 114.2 46.8c31.7 21.7 56.3 50.5 
-                        73.8 86.5s26.2 80.4 26.2 133.3c0 57.1-13 104.7-38.9 142.8-25.9 38.1-64.3 69.3-115 93.6 69.8 20.1 121.9 55.3 156.3 105.5 
-                        34.4 50.2 51.6 110.8 51.6 181.7 0 57.1-11.1 106.6-33.3 148.4s-52.1 75.9-89.7 102.3c-37.6 26.5-80.4 46-128.5 58.7-48.4 
-                        12.7-98.3 19.1-148.3 19H350V683.6h533.1zm-31.7 458.5c44.4 0 80.9-10.6 109.5-31.7 28.6-21.2 42.9-55.5 42.8-103.1 
-                        0-26.4-4.8-48.1-14.3-65s-22.2-30.2-38.1-39.7c-15.9-9.5-34.1-16.1-54.7-19.8-21.2-3.7-42.7-5.6-64.3-5.5H599.2v265l252.2-.2zm14.3 
-                        480.7c23.5.1 46.9-2.3 69.8-7.1 22.2-4.8 41.8-12.7 58.7-23.8 16.9-11.1 30.4-26.2 40.5-45.2 10-19 15.1-43.4 
-                        15.1-73 0-58.1-16.4-99.7-49.2-124.5-32.8-24.9-76.2-37.3-130.1-37.3H599.2v311l266.5-.1zm746.6-23.8c33.8 32.8 
-                        82.5 49.2 146 49.2 45.5 0 84.6-11.4 117.4-34.1 32.8-22.7 52.9-46.8 60.3-72.2h198.3c-31.7 98.4-80.4 168.7-146 211-65.6 
-                        42.3-144.9 63.5-238 63.5-64.5 0-122.7-10.3-174.5-30.9-51.8-20.6-95.7-50-131.7-88.1-36-38.1-63.8-83.5-83.3-136.4-19.5-52.9-29.3-111.1-29.3-174.5 
-                        0-61.3 10-118.4 30.1-171.3 20.1-52.9 48.7-98.6 85.7-137.2 37-38.6 81.2-69 132.5-91.2 51.3-22.2 108.2-33.3 170.6-33.3 
-                        69.8 0 130.6 13.5 182.5 40.5 51.8 27 94.4 63.2 127.7 108.7s57.4 97.3 72.2 155.5c14.8 58.2 20.1 119 15.9 182.5h-591.8c3.1 
-                        72.7 21.6 125.6 55.4 158.3zm254.7-431.5c-27-29.6-68-44.4-123-44.4-36 0-65.9 6.1-89.6 18.2-23.8 12.2-42.8 27.2-57.1 
-                        45.2-14.3 18-24.3 37-30.1 57.1-5.8 20.1-9.3 38.1-10.3 53.9h366.5c-10.7-57-29.5-100.4-56.4-130zm-348.7-426.4h457.9v127h-457.9v-127z" id="behance"/></svg>
-                </a>
-                <a href="https://github.com/alexmillarUI" target="_blank">
-                    <svg height="50" viewBox="0 -3.1 2490.3 2493" width="50" xmlns="http://www.w3.org/2000/svg"><ellipse cx="1245.2" cy="1243.4" fill="#fff" rx="1217.6" 
-                        ry="1246.5"/><path d="m1245.2 1.6c-687.6 0-1245.2 557.4-1245.2 1245.1 0 550.2 356.8 1016.9 851.5 1181.5 
-                        62.2 11.5 85.1-27 85.1-59.9 0-29.7-1.2-127.8-1.7-231.8-346.4 75.3-419.5-146.9-419.5-146.9-56.6-143.9-138.3-182.2-138.3-182.2-113-77.3 8.5-75.7 8.5-75.7 
-                        125 8.8 190.9 128.3 190.9 128.3 111.1 190.4 291.3 135.3 362.3 103.5 11.2-80.5 43.4-135.4 79.1-166.5-276.6-31.5-567.3-138.3-567.3-615.4 0-135.9 48.6-247 
-                        128.3-334.2-12.9-31.3-55.5-157.9 12.1-329.4 0 0 104.6-33.5 342.5 127.6 99.3-27.6 205.8-41.4 311.7-41.9 105.8.5 212.4 14.3 311.9 41.9 237.7-161.1 342.1-127.6 
-                        342.1-127.6 67.8 171.5 25.1 298.2 12.2 329.5 79.8 87.2 128.1 198.3 128.1 334.2 0 478.2-291.3 583.6-568.6 614.4 44.7 38.6 84.5 114.4 84.5 
-                        230.6 0 166.6-1.4 300.7-1.4 341.7 0 33.1 22.4 72 85.5 59.7 494.5-164.8 850.8-631.4 850.8-1181.4 0-687.7-557.5-1245.1-1245.1-1245.1" fill="#5c6bc0"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <g clip-path="url(#clip0_301_1442)">
+                          <path d="M19.9785 0.219727C9.06649 0.219727 0.220703 9.06552 0.220703 19.9775C0.220703 30.8896 9.06649 39.7354 19.9785 39.7354C30.8905 39.7354 39.7363 30.8896 39.7363 19.9775C39.7363 9.06552 30.8905 0.219727 19.9785 0.219727Z" fill="#006699"/>
+                          <path d="M13.9144 16.2981H9.36133V30.9364H13.9144V16.2981Z" fill="white"/>
+                          <path d="M11.6385 14.2969C10.1808 14.2969 9.00195 13.115 9.00195 11.6595C9.00195 10.2027 10.1808 9.02026 11.6385 9.02026C13.0931 9.02026 14.2751 10.2022 14.2751 11.6595C14.2751 13.115 13.0927 14.2969 11.6385 14.2969Z" fill="white"/>
+                          <path d="M30.9554 30.9349H26.4081V23.8164C26.4081 22.1185 26.3787 19.9351 24.0437 19.9351C21.6763 19.9351 21.3149 21.7857 21.3149 23.6943V30.9349H16.7676V16.297H21.1314V18.2987H21.1933C21.8006 17.1475 23.285 15.9343 25.4979 15.9343C30.105 15.9343 30.9554 18.9652 30.9554 22.9066V30.9349Z" fill="white"/>
+                        </g>
+                        <defs>
+                          <clippath id="clip0_301_1442">
+                            <rect width="40" height="40" fill="white"/>
+                          </clippath>
+                        </defs>
+                      </svg>
                 </a>
             </div>
             <p>
-                Copyright Alex Millar 2024
+                © Alex Millar 2024
             </p>
         </div>
     </footer>
-    <script
-    src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script> AOS.init(); </script>
     <script src="js/scripts.js"></script>
-    <script>
-        AOS.init();
-      </script>
 </body>
 </html>
