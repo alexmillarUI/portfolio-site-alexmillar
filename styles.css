@@ -179,7 +179,7 @@ img {
   width: 100%;
 }
 .title {
-  padding-top: 240px;
+  padding-top: 120px;
   text-align: center;
 }
 .orangeword {
@@ -187,8 +187,11 @@ img {
 }
 .centralbutton {
   text-align: center;
-  padding-top: 150px;
+  padding-top: 100px;
   padding-bottom: 150px;
+}
+#work .centralbutton {
+  padding-bottom: 300px;
 }
 
 
@@ -283,16 +286,25 @@ img {
 }
 [class*="col-"] {
   float: left;
-  padding-left: 10px;
 }
 .row::after {
   content: "";
   clear: both;
   display: block;
 }
+.row h1 {
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 0.2em;
+  text-align: center;
+}
+.row h2 {
+  font-size: 1.8em;
+  text-align: center;
+}
 .skillicons {
   letter-spacing: 0.2em;
-  padding-top: 10%;
+  padding-top: 20%;
   float: none;
   text-align: center;
 }
@@ -305,13 +317,16 @@ img {
   letter-spacing: 0.8em;
 }  
 .portrait {
-  width: 100%;
+  width: 80%;
   float: none;
+  margin: auto;
   padding-left: 15%;
   padding-right: 15%;
   padding-bottom: 10%;
-  padding-top: 20%;
+  padding-top: 5%;
 }
+
+
 .story {
   padding-left: 20px;
   padding-right: 20px;
@@ -325,9 +340,9 @@ img {
 }
 .chart-container {
   position: relative;
-  width: 350px;
-  height: 350px;
-  margin-left: 40px;
+  width: 300px;
+  height: 300px;
+  margin-left: 100px;
   margin-top: 60px;
 }
 .chart, .bgchart {
@@ -340,16 +355,17 @@ img {
 }
 .chart {
   position: absolute;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   top: 50%;
   left: 50%;
   margin: -200px 0 0 -200px;
+  opacity: 0.95;
 }
 .bgchart {
   position: absolute;
-  width: 380px;
-  height: 380px;
+  width: 330px;
+  height: 330px;
   top: 50%;
   left: 50%;
   margin: -215px 0 0 -215px;
@@ -376,11 +392,10 @@ img {
   top: 100%;
   width: 100%;
   margin-top: -30%;
-  font-size: 14px;
-  font-family: Poppins;
+  font-size: 16px;
+  font-family: 'Poppins';
   letter-spacing: .04em;
-  text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
 }
 .chart .doughnutSummary,
 .bgchart .doughnutSummary{
@@ -412,7 +427,7 @@ img {
   }
   .skillicons {
     letter-spacing: 2em;
-    padding-top: 2%;
+    padding-top: 10%;
     float: none;
     text-align: center;
   }
@@ -425,7 +440,7 @@ img {
     letter-spacing: 0.8em;
   }  
   .portrait {
-    width: 100%;
+    width: 80%;
     float: none;
     padding-left: 20%;
     padding-right: 20%;
@@ -482,6 +497,10 @@ img {
     top: 50%;
     left: 50%;
     margin: -215px 0 0 -215px;
+  }
+  .chart .doughnutSummaryTitle {
+    font-size: 18px;
+    font-weight: 600;
   }
 }  
 
@@ -564,13 +583,13 @@ img {
   }
   .col-md-6.col-lg-7{
     width: 50%;
-    padding-left: 6%;
+    padding-left: 10%;
     padding-top: 12%;
     padding-bottom: 5%;
   }
   .skillicons {
     letter-spacing: 0.6em;
-    padding-top: 8%;
+    padding-top: 15%;
     float: left;
     text-align: left;
   }
@@ -607,13 +626,13 @@ img {
   box-shadow: 6px 6px 18px 4px rgba(39, 39, 39, 0.75);
   }
   .row h1 {
-    font-size: 3.2em;
+    font-size: 3.8em;
     font-weight: 700;
     line-height: 0.2em;
     text-align: left;
   }
   .row h2 {
-    font-size: 2em;
+    font-size: 2.4em;
     font-weight: 700;
     line-height: 1.6em;
     text-align: left;
@@ -621,10 +640,6 @@ img {
   h2 {
     font-size: 2.5em;
     text-align: left;
-  }
-  h4 {
-    font-size: 1.4em;
-    font-weight: 500;
   }
   .row p {
     font-size: 0.9em;
@@ -657,21 +672,22 @@ img {
   .portrait {
     width: 80%;
     float: right;
+    padding-top: 10%;
+  }
+  .row h1 {
+    font-size: 5em;
+    font-weight: 700;
+    line-height: 0.4em;
+  }
+  .row h2 {
+    font-size: 3em;
   }
   h1 {
     font-size: 4em;
     font-weight: 700;
-    line-height: 0.5em;
-  }
-  h2 {
-    font-size: 2.5em;
-  }
-  h4 {
-    font-size: 1.5em;
-    font-weight: 500;
   }
   .row p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 400;
     text-align: left;
     padding: 0;
