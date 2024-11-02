@@ -473,6 +473,9 @@ img {
     padding-left: 20%;
     padding-right: 20%;
   }
+  footer p {
+    font-size: 1.2em;
+  }
   .chart-container {
     position: relative;
     width: 400px;
@@ -647,7 +650,13 @@ img {
     text-align: left;
     padding: 0;
   }
+  h1 {
+    font-size: 3.1em;
   }
+  p {
+    font-size: 1.2em;
+  }
+}
 @media only screen and (min-width: 1440px) {
   .col-md-6.col-lg-5 {
     width: 45%;
