@@ -16,6 +16,11 @@ $(".rotate").click(function() {
   $(this).toggleClass("down"); 
 });
 
+$(window).on('load', function() {
+    AOS.refresh();
+  });
+  
+
 jQuery(function(){
   
     var firstSelected = 0;
